@@ -14,7 +14,8 @@
 --      FIRST_VALUE                                                                  --
 --      LAST_VALUE                                                                   --
 ---------------------------------------------------------------------------------------        
-    
+
+--Create table and Insert data using Emp_Dept_TableCreation files     
 --Examine the Tables 
 SELECT * from dept;
 SELECT * from emp;
