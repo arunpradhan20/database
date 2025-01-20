@@ -129,16 +129,17 @@ SELECT ename,sal,hiredate,
 FROM emp
 where deptno=10;
 
+SELECT ename,sal,hiredate,
+       LAST_VALUE(hiredate) over(order by hiredate) LastValue
+FROM emp
+where deptno=10;
 
 --WINDOW Clause
 --[ROW or RANGE] BETWEEN <start_expr> AND <end_expr>
 --<start_expr> UNBOUNDED PRECEDING |CURRENT ROW -- <sql_expr> PRECEDING or FOLLOWING.
 --<end_expr> UNBOUNDED FOLLOWING |CURRENT ROW or <sql_expr> PRECEDING or FOLLOWING
 
-SELECT ename,sal,hiredate,
-       LAST_VALUE(hiredate) over(order by hiredate) LastValue
-FROM emp
-where deptno=10;
+
 
 SELECT DISTINCT deptno, LAST_VALUE(sal)
  OVER (PARTITION BY deptno ORDER BY sal ASC
